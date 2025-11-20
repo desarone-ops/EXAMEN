@@ -1,0 +1,77 @@
+/* Tipografía y layout  */
+body {
+  background: #f2f2f2;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 28px 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+/* Botones  de la portada */
+.card-btn {
+  display: inline-block;
+  width: 150px;
+  height:150px;
+  align-items:center;
+  text-align: center;
+  justify-content:center;
+  padding: 26px 10px;
+  margin: 16px 20px;
+  border-radius: 14px;
+  font-weight:600;
+  font-size: 22px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow:0 6px 14px rgba(0,0,0,.12);
+  transition:transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+
+.btn-purple { background: #9C27B0; }   /* similar al ejemplo morado */
+.btn-green  { background: #8BC34A; }   /* similar al ejemplo verde  */
+.card-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.15);
+  filter:brightness(1.03);
+}
+
+/* Formularios */
+label { display:block; margin: 10px 0 6px; font-weight: 600; }
+input[type=text], input[type=number], input[type=password] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+button.submit {
+  margin-top: 16px;
+  background: #1677ff;
+  color:#fff;
+  padding:10px 16px;
+  border:0; border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+button.submit:hover { filter: brightness(0.95); }
+
+/* Mensajes */
+.alert { padding: 10px 12px; border-radius: 8px; margin: 12px 0; }
+.alert.error { background:#ffe3e3; color:#8a1f1f; border:1px solid #ffcaca; }
+.alert.ok    { background:#e9ffe9; color:#1f7a1f; border:1px solid #c7f3c7; }
+
+/* Tabla para resultados */
+.result {
+  margin-top: 18px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.result h3 { margin-top:0; }

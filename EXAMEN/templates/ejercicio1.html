@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% set show_back = True %}
+{% block content %}
+
+  <h1>Ejercicio 1 — Compra de pinturas</h1>
+  <p>Precio por tarro: <strong>${{ "{:,}".format(9000) }}</strong></p>
+
+  <form method="post" novalidate>
+    <label for="nombre">Nombre</label>
+    <input id="nombre" name="nombre" type="text" required placeholder="Tu nombre">
+
+    <label for="edad">Edad</label>
+    <input id="edad" name="edad" type="number" min="0" step="1" required placeholder="0">
+
+    <label for="tarros">Cantidad de tarros</label>
+    <input id="tarros" name="tarros" type="number" min="1" step="1" required placeholder="1">
+
+    <button class="submit" type="submit">Calcular</button>
+  </form>
+
+  {% if resultado %}
+    <div class="result">
+      <h3>Resumen de compra</h3>
+      <p><strong>Cliente:</strong> {{ resultado.nombre }}</p>
+      <p><strong>Edad:</strong> {{ resultado.edad }}</p>
+      <p><strong>Tarros:</strong> {{ resultado.tarros }} × ${{ "{:,}".format(resultado.precio) }}</p>
+      <p><strong>Total sin descuento:</strong> ${{ "{:,}".format(resultado.total_sin_desc) }}</p>
+      <p><strong>Descuento aplicado:</strong> {{ resultado.desc_pct }}% (−${{ "{:,}".format(resultado.monto_desc) }})</p>
+      <p><strong>Total a pagar:</strong> ${{ "{:,}".format(resultado.total_pagar) }}</p>
+    </div>
+  {% endif %}
+{% endblock %}
